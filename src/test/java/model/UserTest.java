@@ -72,4 +72,14 @@ class UserTest {
         assertEquals(100, arif.getPoint());
         assertEquals(100, khafido.getPoint());
     }
+
+    @Test
+    void compareHistory() {
+        User mockArif = new User(1, "arif", 100);
+        User mockKhafido = new User(2, "khafido", 100);
+        ArrayList<History> mockHistories = mockArif.sendPoint(mockKhafido, 10);
+
+        histories.addAll(arif.sendPoint(khafido, 10));
+        assertEquals(mockHistories.toString(), histories.toString());
+    }
 }
